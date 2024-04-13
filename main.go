@@ -121,8 +121,7 @@ func main() {
 
 		result := calculate(a, b, parts[1])
 		if result < 0 {
-			fmt.Println("Результат не может быть меньше нуля")
-			continue
+			panic("Результат не может быть меньше нуля")
 		}
 		if (num1Type == "roman" && num2Type == "arabic") || (num2Type == "roman" && num1Type == "arabic") {
 			panic("Используются одновременно разные системы счисления")
