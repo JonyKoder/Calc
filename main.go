@@ -20,6 +20,15 @@ var romeMap = map[string]int{
 	"VIII": 8,
 	"IX":   9,
 	"X":    10,
+	"XX":   20,
+	"XXX":  30,
+	"XL":   40,
+	"L":    50,
+	"LX":   60,
+	"LXX":  70,
+	"LXXX": 80,
+	"XC":   90,
+	"C":    100,
 }
 
 func arabToRome(number int) string {
@@ -30,6 +39,15 @@ func arabToRome(number int) string {
 		Value  int
 		Symbol string
 	}{
+		{100, "C"},
+		{90, "XC"},
+		{80, "LXXX"},
+		{70, "LXX"},
+		{60, "LX"},
+		{50, "L"},
+		{40, "XL"},
+		{30, "XXX"},
+		{20, "XX"},
 		{10, "X"},
 		{9, "IX"},
 		{5, "V"},
