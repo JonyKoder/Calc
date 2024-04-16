@@ -118,7 +118,9 @@ func main() {
 			fmt.Println("Ошибка ввода второго числа:", err)
 			continue
 		}
-
+		if a > 10 || b > 10 {
+			panic("Число не должно быть больше 10")
+		}
 		result := calculate(a, b, parts[1])
 		if result < 0 {
 			panic("Результат не может быть меньше нуля")
@@ -138,11 +140,15 @@ func main() {
 func getNumType(num string) string {
 	match, _ := regexp.MatchString("^[IVXLCDMivxlcdm]+$", num)
 	if match {
+		arabNum, _ := romeToArab(num)
+
+		if arabNum > 10 {
+			panic("Число не должно быть больше 10")
+		}
 		return "roman"
 	}
 	return "arabic"
 }
-
 func convertToNumber(num string, numType string) (int, error) {
 	if numType == "roman" {
 		return romeToArab(num)
